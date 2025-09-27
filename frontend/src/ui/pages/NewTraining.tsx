@@ -1,5 +1,6 @@
 import React from 'react';
 import { Brain } from 'lucide-react';
+import { useTraining } from '../contexts/TrainingContext';
 import { TrainingStepper } from '../components/training/TrainingStepper';
 import { UploadPhase } from '../components/training/UploadPhase';
 import { AssemblingPhase } from '../components/training/AssemblingPhase';
@@ -8,9 +9,7 @@ import { TrainingProgressPhase } from '../components/training/TrainingProgressPh
 import { CompletedPhase } from '../components/training/CompletedPhase';
 
 const NewTrainingPage = () => {
-  const [currentPhase, setCurrentPhase] = React.useState<
-    'upload' | 'assembling' | 'payment' | 'training' | 'completed'
-  >('upload');
+  const { currentPhase } = useTraining();
 
   const renderCurrentPhase = () => {
     switch (currentPhase) {
