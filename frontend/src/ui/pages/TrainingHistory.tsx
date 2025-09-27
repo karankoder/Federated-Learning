@@ -11,6 +11,7 @@ import {
   checkTaskStatus,
   fetchWeightsSubmittedEvent,
 } from '../utils/hederaHelper';
+import { LogViewerModal } from '../components/history/LogViewerModal';
 import { CONTRACT_ID } from '../utils/constant';
 
 export interface TrainingProject {
@@ -133,6 +134,12 @@ const TrainingHistoryPage = () => {
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
         onDelete={handleDeleteProject}
+      />
+
+      <LogViewerModal
+        isOpen={!!logViewProject}
+        project={logViewProject}
+        onClose={() => setLogViewProject(null)}
       />
     </div>
   );

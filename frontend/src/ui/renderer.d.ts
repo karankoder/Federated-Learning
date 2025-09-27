@@ -5,6 +5,7 @@ export interface ISettings {
 
 export interface IElectronAPI {
   openFileDialog: () => Promise<string | null>;
+  onProgress: (callback: (message: string) => void) => void;
   saveCredentials: (settings: ISettings) => Promise<void>;
   loadCredentials: () => Promise<ISettings | null>;
   getHistory: () => Promise<any[]>;
@@ -31,7 +32,10 @@ export interface IElectronAPI {
   listFilesFromAkave: () => Promise<any[]>;
   fetchFileFromAkave: (objectKey: string) => Promise<string>;
   onAkaveProgress: (callback: (message: string) => void) => void;
-
+  startLogSubscription: (data: { projectId: string; topicId: string }) => void;
+  stopLogSubscription: () => void;
+  getLogs: (projectId: string) => Promise<any[]>;
+  onNewLog: (callback: (log: any) => void) => () => void;
   downloadFile: (data: {
     url: string;
     fileName: string;
