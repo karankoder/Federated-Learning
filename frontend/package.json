@@ -21,6 +21,7 @@
   "dependencies": {
     "@hashgraph/hedera-wallet-connect": "^1.5.1",
     "@hashgraph/sdk": "^2.73.2",
+    "@headlessui/react": "^2.2.9",
     "@tailwindcss/vite": "^4.1.13",
     "@walletconnect/types": "^2.21.9",
     "axios": "^1.12.2",
