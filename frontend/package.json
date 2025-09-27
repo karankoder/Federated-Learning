@@ -19,6 +19,7 @@
     "dist:win": "npm run transpile:electron && npm run build && electron-builder --win --x64"
   },
   "dependencies": {
+    "@hashgraph/sdk": "^2.73.2",
     "@tailwindcss/vite": "^4.1.13",
     "axios": "^1.12.2",
     "cross-env": "^10.0.0",
