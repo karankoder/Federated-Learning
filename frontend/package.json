@@ -19,8 +19,10 @@
     "dist:win": "npm run transpile:electron && npm run build && electron-builder --win --x64"
   },
   "dependencies": {
+    "@hashgraph/hedera-wallet-connect": "^1.5.1",
     "@hashgraph/sdk": "^2.73.2",
     "@tailwindcss/vite": "^4.1.13",
+    "@walletconnect/types": "^2.21.9",
     "axios": "^1.12.2",
     "cross-env": "^10.0.0",
     "electron": "^38.1.2",
