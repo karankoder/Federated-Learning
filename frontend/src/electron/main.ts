@@ -2,8 +2,11 @@ import { app, BrowserWindow, ipcMain, shell } from 'electron';
 import path from 'path';
 import { isDev } from './utils.js';
 import { resolvePath } from './pathResolver.js';
+import { registerIpcHandlers } from './ipc/index.js';
+import Store from 'electron-store';
 
 let mainWindow: BrowserWindow;
+const store = new Store();
 
 ipcMain.on('window:minimize', () => {
   mainWindow?.minimize();
@@ -30,6 +33,8 @@ ipcMain.on('shell:openExternal', (_event, url: string) => {
 });
 
 app.on('ready', () => {
+  registerIpcHandlers();
+
   mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
