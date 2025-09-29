@@ -113,6 +113,7 @@ These instructions will help you get a copy of the project up and running on you
 
 - ### Architecture
   ![App Architecture](./images/app_arch.png)
+  
 - ### Technologies Used
 
   - **Frontend**
